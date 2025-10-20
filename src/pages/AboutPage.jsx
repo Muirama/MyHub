@@ -2,6 +2,7 @@ import React from "react";
 import { about } from "../data/about";
 import ProfileCard from "../components/ProfileCard";
 import SkillBar from "../components/SkillBar";
+import SkillsCarousel from "../components/SkillsCarousel";
 import Timeline from "../components/Timeline";
 
 export default function AboutPage() {
@@ -12,10 +13,10 @@ export default function AboutPage() {
           <div style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04))", padding: 18, borderRadius: 16 }}>
             <ProfileCard data={about} />
             <div style={{ marginTop: 18 }}>
-              <h4 style={{ marginBottom: 10 }}>Compétences</h4>
-              {about.skills.map((s, i) => (
-                <SkillBar key={i} skill={s} />
-              ))}
+                <h4 style={{ marginBottom: 10 }}>Compétences</h4>
+                  <div style={{ marginTop: 10 }}>
+                    <SkillsCarousel categories={about.skillCategories} interval={3500} />
+                  </div>
             </div>
           </div>
         </div>

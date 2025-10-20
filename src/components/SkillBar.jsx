@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function SkillBar({ skill }) {
+  const fillRef = useRef(null);
+
+  useEffect(() => {
+    if (fillRef.current && skill.level) {
+      // trigger a smooth width transition
+      requestAnimationFrame(() => {
+        fillRef.current.style.width = `${skill.level}%`;
+      });
+    }
+  }, [skill.level]);
+
   return (
-    <div style={{ marginBottom: 12 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
-        <div style={{ fontWeight: 700 }}>{skill.name}</div>
-        <div className="muted">{skill.level}%</div>
+    <div className="skill-bar">
+      <div className="skill-bar-header">
+        <div className="skill-name">{skill.name}</div>
+        <div className="skill-level muted">{skill.level}%</div>
       </div>
-      <div style={{ width: "100%", height: 10, borderRadius: 999, background: "rgba(255,255,255,0.04)" }}>
-        <div style={{ width: `${skill.level}%`, height: "100%", borderRadius: 999, background: "linear-gradient(90deg,var(--accent),var(--accent-2))", transition: "width 1.2s ease" }} />
+      <div className="skill-track">
+        <div className="skill-fill" ref={fillRef} style={{ width: 0 }} />
       </div>
     </div>
   );

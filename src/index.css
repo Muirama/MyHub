@@ -85,3 +85,27 @@ body{
 /* Responsive tweaks */
 @media (max-width: 640px){ .site-container{ padding:16px } .hero{ flex-direction:column; align-items:flex-start } }
 
+/* Skill bar styles */
+.skill-bar { margin-bottom: 12px }
+.skill-bar-header { display:flex; justify-content:space-between; margin-bottom:6px }
+.skill-name { font-weight:700 }
+.skill-track { width:100%; height:10px; border-radius:999px; background: rgba(255,255,255,0.04); overflow:hidden }
+.skill-fill { height:100%; background: linear-gradient(90deg,var(--accent),var(--accent-2)); width:0; transition: width 1.2s ease }
+
+/* skill badges */
+.skill-badge { display:inline-block; padding:6px 10px; border-radius:999px; background: rgba(255,255,255,0.02); margin-right:8px; margin-bottom:8px }
+
+/* Skills carousel */
+.skills-carousel { position: relative; overflow: hidden; border-radius:12px; padding:12px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.03)); }
+.carousel-track { display:flex; transition: transform .6s cubic-bezier(.2,.9,.2,1); width:100%; }
+.carousel-item { min-width:100%; padding:12px }
+.carousel-header { font-weight:800; margin-bottom:8px }
+.carousel-body { max-height: 260px; overflow:auto; padding-right:6px }
+.carousel-dots { display:flex; gap:8px; justify-content:center; margin-top:10px }
+.dot { width:8px; height:8px; border-radius:999px; background: rgba(255,255,255,0.06); border:none; cursor:pointer }
+.dot.active { background: linear-gradient(90deg,var(--accent),var(--accent-2)); box-shadow: 0 6px 18px rgba(96,165,250,0.08) }
+
+@media (max-width: 900px) {
+  .skills-carousel { padding:10px }
+}
+
