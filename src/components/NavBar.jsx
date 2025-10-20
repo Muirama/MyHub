@@ -26,6 +26,11 @@ export default function NavBar() {
                             About
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/components" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+                            Components
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
         </nav>

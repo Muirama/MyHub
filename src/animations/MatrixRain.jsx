@@ -1,24 +1,29 @@
 import { useRef, useEffect } from "react";
 
-const MatrixRain = () => {
+const MatrixRain = ({ previewMode = false }) => {
   const canvasRef = useRef(null);
   const animationRef = useRef();
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
     const ctx = canvas.getContext("2d");
 
     const letters =
       "アァイィウエオカキクケコサシスセソタチツテトナニヌネノハヒフホ0123456789".split(
         ""
       );
-    const fontSize = 16;
-    let columns, drops;
+    const baseFontSize = previewMode ? 10 : 16;
+    let fontSize = baseFontSize;
+    let columns, drops, width, height;
 
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      columns = Math.floor(canvas.width / fontSize);
+      width = canvas.clientWidth || window.innerWidth;
+      height = canvas.clientHeight || window.innerHeight;
+      fontSize = baseFontSize;
+      canvas.width = width;
+      canvas.height = height;
+      columns = Math.floor(width / fontSize);
       drops = Array(columns).fill(1);
     };
 
@@ -48,11 +53,12 @@ const MatrixRain = () => {
       cancelAnimationFrame(animationRef.current);
       window.removeEventListener("resize", resize);
     };
-  }, []);
+  }, [previewMode]);
 
   return (
     <canvas
       ref={canvasRef}
+      className="animation-canvas"
       style={{ width: "100%", height: "100%", display: "block" }}
     />
   );

@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import AboutPage from "./pages/AboutPage";
+import ComponentsPage from "./pages/ComponentsPage";
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-  <Route path="/projects" element={<ProjectsPage />} />
-  <Route path="/about" element={<AboutPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/components" element={<ComponentsPage />} />
       </Routes>
     </Router>
   );

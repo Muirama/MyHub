@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, onQuickView }) {
   const Preview = project.component || null;
 
   return (
@@ -18,7 +18,7 @@ export default function ProjectCard({ project }) {
           {Preview ? (
             <Suspense fallback={<div style={{ padding: 12, color: "var(--muted)" }}>Loading preview...</div>}>
               <div style={{ width: "100%", height: "100%" }}>
-                <Preview />
+                <Preview previewMode={true} />
               </div>
             </Suspense>
           ) : (
@@ -27,7 +27,8 @@ export default function ProjectCard({ project }) {
         </div>
       </div>
 
-      <div style={{ marginTop: 12 }}>
+      <div style={{ marginTop: 12, display: 'flex', gap: 12, alignItems: 'center' }}>
+        <button onClick={() => onQuickView && onQuickView(project)} style={{ padding: '8px 12px', borderRadius: 8, border: 'none', background: 'var(--accent)', color: '#04263b', fontWeight: 700 }}>Demo</button>
         {project.url ? (
           <a href={project.url} style={{ color: "var(--accent-2)", fontWeight: 700 }}>Open</a>
         ) : (

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const FallingLeaves = () => {
+const FallingLeaves = ({ previewMode = false, count = 30 }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -11,8 +11,8 @@ const FallingLeaves = () => {
       constructor(width, height) {
         this.x = Math.random() * width;
         this.y = Math.random() * -height;
-        this.size = 15 + Math.random() * 20;
-        this.speed = 1 + Math.random() * 2;
+        this.size = (previewMode ? 8 : 15) + Math.random() * (previewMode ? 12 : 20);
+        this.speed = (previewMode ? 0.3 : 1) + Math.random() * (previewMode ? 1 : 2);
         this.color = colors[Math.floor(Math.random() * colors.length)];
         this.rotation = Math.random() * 360;
       }
@@ -39,13 +39,14 @@ const FallingLeaves = () => {
     const ctx = canvas.getContext("2d");
 
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = canvas.clientWidth || window.innerWidth;
+      canvas.height = canvas.clientHeight || window.innerHeight;
     };
     resize();
     window.addEventListener("resize", resize);
 
-    for (let i = 0; i < 30; i++) leaves.push(new Leaf(canvas.width, canvas.height));
+    const target = previewMode ? Math.max(6, Math.floor(count / 4)) : count;
+    for (let i = 0; i < target; i++) leaves.push(new Leaf(canvas.width, canvas.height));
 
     let rafId;
     const animate = () => {
@@ -62,9 +63,9 @@ const FallingLeaves = () => {
       window.removeEventListener("resize", resize);
       cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [previewMode, count]);
 
-  return <canvas ref={canvasRef} style={{ width: "100%", height: "100%", display: "block", background: "skyblue" }} />;
+  return <canvas ref={canvasRef} className="animation-canvas" style={{ width: "100%", height: "100%", display: "block" }} />;
 };
 
 export default FallingLeaves;
