@@ -1,23 +1,33 @@
-import { Link } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-const NavBar = () => {
-  return (
-    <nav
-      style={{
-        display: "flex",
-        padding: "1rem",
-        background: "#111",
-        color: "#fff",
-      }}
-    >
-      <Link style={{ margin: "0 1rem" }} to="/">
-        Home
-      </Link>
-      <Link style={{ margin: "0 1rem" }} to="/animations">
-        Animations
-      </Link>
-    </nav>
-  );
-};
+export default function NavBar() {
+    return (
+        <nav className="nav">
+            <div className="site-container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    <div style={{ width: 44, height: 44, borderRadius: 10, background: "linear-gradient(135deg,var(--accent),var(--accent-2))" }} />
+                    <div style={{ fontWeight: 800 }}>MyHub</div>
+                </div>
 
-export default NavBar;
+                <ul className="nav-list">
+                    <li>
+                        <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} end>
+                            Home
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/projects" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+                            Projects
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+                            About
+                        </NavLink>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    );
+}
