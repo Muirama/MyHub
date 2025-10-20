@@ -3,10 +3,10 @@ export const about = {
   title: "Développeur Junior",
   location: { city: "Antananarivo", country: "Madagascar" },
   availability: "Open to work",
-  photo: "../assets/profile.jpg",
+  photo: "/profile.jpg",
   bio: "Je crée des interfaces interactives et des animations web. J'aime mélanger design 2D/3D et code pour des expériences immersives.",
   email: "mandresy.michel.ramandimbinirina@esti.mg",
-  resumeUrl: "../assets/CV_RAMA.pdf",
+  resumeUrl: "/CV_RAMA.pdf",
   skillCategories: [
     {
       category: "Front-end",
