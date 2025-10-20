@@ -4,7 +4,7 @@ export const about = {
   location: { city: "Antananarivo", country: "Madagascar" },
   availability: "Open to work",
   photo: "/profile.jpg",
-  bio: "Je crée des interfaces interactives et des animations web. J'aime mélanger design 2D/3D et code pour des expériences immersives.",
+  bio: "Je suis développeur junior passionné par le développement Web, mobile et gaming.",
   email: "mandresy.michel.ramandimbinirina@esti.mg",
   resumeUrl: "/CV_RAMA.pdf",
   skillCategories: [
