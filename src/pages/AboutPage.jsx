@@ -125,7 +125,7 @@ export default function AboutPage() {
         {/* anciens chiffres */}
         <div className="stat-card">
           <span className="stat-icon">⭐</span>
-          <h3 className="stat-number">+15</h3>
+          <h3 className="stat-number">+30</h3>
           <p className="stat-label">
             Projets réalisés ( personnel et académiques )
           </p>
