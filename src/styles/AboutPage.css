@@ -129,18 +129,35 @@
 }
 
 .bio-stat-card {
-  background: var(--bg-card);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-light);
-  text-align: center;
-  transition: all 0.3s ease;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }
 
-.bio-stat-card:hover {
-  transform: translateX(10px);
-  border-color: var(--accent-blue);
-  box-shadow: var(--shadow-md);
+/* Nouveau : bloc "Qui suis-je ?" à gauche dans la bio */
+.bio-who {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  /* pas de fond blanc : utiliser transparence pour rester cohérent */
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.06);
+}
+
+.bio-who h3 {
+  margin: 0 0 var(--spacing-sm) 0;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+}
+
+.bio-who p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .bio-stat-icon {
@@ -160,50 +177,12 @@
   font-size: 0.9rem;
 }
 
-/* 3. Skills Section */
-.skills-section {
-  padding: var(--spacing-2xl);
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--glass-border);
-}
-
-.skills-categories {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-2xl);
-}
-
-.skill-category h3 {
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-md);
-  font-size: 1.3rem;
-}
-
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-}
-
-.skill-tags span {
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  padding: var(--spacing-xs) var(--spacing-md);
-  border-radius: var(--radius-sm);
+.bio-extended p {
+  text-align: justify;
   color: var(--text-secondary);
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.skill-tags span:hover {
-  background: var(--accent-blue);
-  color: white;
-  border-color: var(--accent-blue);
-  transform: translateY(-2px);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+  hyphens: auto;
 }
 
 /* 4. Stats Showcase */
@@ -215,36 +194,35 @@
 }
 
 .stat-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-lg);
+  background: transparent; /* suppression du fond blanc */
+  border: none;
+  box-shadow: none;
+  padding: var(--spacing-lg);
   text-align: center;
-  transition: all 0.3s ease;
+  transition: transform 0.18s ease, color 0.18s ease;
+  color: var(--text-primary);
 }
 
 .stat-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--accent-blue);
+  transform: translateY(-6px);
 }
 
 .stat-icon {
-  font-size: 3rem;
+  font-size: 2.6rem;
   display: block;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+  color: var(--accent-blue);
 }
 
 .stat-card .stat-number {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: var(--spacing-xs);
 }
 
 .stat-card .stat-label {
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 0.95rem;
 }
 
@@ -396,7 +374,8 @@
   }
 
   .bio-content-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* empiler qui-suis-je et bio-extended */
+    gap: var(--spacing-md);
   }
 
   .skills-categories {
@@ -431,6 +410,15 @@
 
   .hero-social-links {
     flex-direction: column;
+  }
+
+  .bio-who {
+    border: none;
+    padding: var(--spacing-md) 0;
+  }
+
+  .bio-extended p {
+    font-size: 0.95rem;
   }
 
   .stats-showcase {

@@ -49,66 +49,60 @@ export default function AboutPage() {
       <section className="about-section bio-section">
         <h2>Mon Parcours</h2>
         <div className="bio-content-grid">
-          <div className="bio-text">
+          <div className="bio-who">
+            <h3>Qui suis‑je ?</h3>
             <p>
-              <strong>Qui suis-je ?</strong>
-              <br />
-              Je m'appelle RAMANDIMBINIRINA Mandresy Michel.
-              Acteuellent étudiant de troisième année en Intégration et Développement
-              Informatique.
+              Étudiant en 3ème année en Intégration et Développement
+              Informatique, je construis des applications web, mobiles et
+              desktop. J’aime apprendre par la pratique, travailler en équipe et
+              explorer de nouvelles technologies.
             </p>
-            <p>
-              <strong>Pourquoi je programme ?</strong>
-              <br />
-              Passionné par la technologie depuis mon plus jeune âge, j'ai
-              découvert le développement web en 2021. Ce qui m'a immédiatement
-              séduit, c'est la possibilité de transformer des idées en
-              applications concrètes qui peuvent aider des milliers de
-              personnes.
-            </p>
-            <p>
-              <strong>Ma mission</strong>
-              <br />
-              Créer des solutions digitales performantes, intuitives et
-              accessibles. Je crois fermement que la technologie doit simplifier
-              la vie, pas la compliquer.
-            </p>
-            <p>
-              <strong>Ce que je recherche</strong>
-              <br />
-              Actuellement ouvert aux opportunités d'alternance, de stage et de
-              collaboration sur des projets innovants. Je cherche à rejoindre
-              une équipe dynamique où je peux apprendre, grandir et apporter ma
-              créativité.
+            <p className="bio-quick">
+              Flexible, curieux et orienté résultat — je cherche des
+              opportunités d'alternance ou de collaboration pour continuer à
+              monter en compétences.
             </p>
           </div>
-          <div className="bio-stats-cards">
-            <div className="bio-stat-card">
-              <span className="bio-stat-icon">📅</span>
-              <h3>Depuis 2021</h3>
-              <p>Développement actif</p>
-            </div>
-            <div className="bio-stat-card">
-              <span className="bio-stat-icon">🚀</span>
-              <h3>+20 Projets</h3>
-              <p>Réalisés avec passion</p>
-            </div>
-            <div className="bio-stat-card">
-              <span className="bio-stat-icon">📱</span>
-              <h3>3 Apps</h3>
-              <p>Publiées en production</p>
-            </div>
+
+          <div className="bio-extended">
+            <p>
+              <strong>Mon expérience en quelques mots</strong>
+              <br />
+              Au cours de mes trois premières années en intégration et
+              développement informatique, j’ai développé de solides compétences
+              en développement web, mobile et desktop, aussi bien côté Front‑End
+              que Back‑End. J’ai appris à concevoir toutes sortes d’applications
+              : certaines bonnes, d’autres moins réussies, parfois maladroites
+              ou incomplètes, mais chacune d’elles a été précieuse dans ma
+              progression.
+            </p>
+            <p>
+              <strong>Ce que ces années m'ont apporté</strong>
+              <br />
+              Ces années m’ont appris à travailler de manière autonome, à
+              collaborer en équipe et à m’adapter à de nouvelles technologies
+              grâce à la veille constante. Sur le plan personnel, j’ai gagné en
+              ouverture, en communication et en assurance.
+            </p>
+            <p>
+              <strong>Réflexion sur l'avenir et l'IA</strong>
+              <br />
+              J’estime que l’IA sera un outil incontournable : ceux qui
+              l’utiliseront efficacement auront une longueur d’avance.
+            </p>
+            <p>
+              <strong>Objectif</strong>
+              <br />À terme, je souhaite me spécialiser dans le développement de
+              jeux vidéo. En attendant, je continue à progresser sur le web et
+              le mobile.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* 3. Compétences */}
-      <section className="about-section skills-section">
-        <TechCarousel />
-      </section>
-
       {/* 4. Statistiques */}
       <section className="stats-showcase">
+        {/* anciens chiffres */}
         <div className="stat-card">
           <span className="stat-icon">⭐</span>
           <h3 className="stat-number">15+</h3>
@@ -128,6 +122,23 @@ export default function AboutPage() {
           <span className="stat-icon">🧠</span>
           <h3 className="stat-number">Passionné</h3>
           <p className="stat-label">IA & UI/UX</p>
+        </div>
+
+        {/* cartes déplacées depuis la bio (intégrées ici) */}
+        <div className="stat-card">
+          <span className="stat-icon">📅</span>
+          <h3 className="stat-number">Depuis 2021</h3>
+          <p className="stat-label">Développement actif</p>
+        </div>
+        <div className="stat-card">
+          <span className="stat-icon">🚀</span>
+          <h3 className="stat-number">+20</h3>
+          <p className="stat-label">Projets</p>
+        </div>
+        <div className="stat-card">
+          <span className="stat-icon">📱</span>
+          <h3 className="stat-number">3</h3>
+          <p className="stat-label">Apps publiées</p>
         </div>
       </section>
 
