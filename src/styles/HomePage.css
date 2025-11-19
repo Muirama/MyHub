@@ -1,3 +1,15 @@
+/* Layout + utilities assumed to be defined as CSS variables elsewhere:
+   --spacing-*, --radius-*, --gradient-blue, --gradient-purple, --gradient-sunset,
+   --bg-card, --text-primary, --text-secondary, --border-medium, --border-light,
+   --shadow-*, --hover-bg, --accent-blue
+*/
+
+.site-container {
+  padding: var(--spacing-xl);
+  box-sizing: border-box;
+}
+
+/* Hero general */
 .hero-section {
   text-align: center;
   padding: var(--spacing-2xl) 0;
@@ -21,11 +33,13 @@
   margin-right: auto;
 }
 
+/* Buttons */
 .hero-buttons {
   display: flex;
   gap: var(--spacing-md);
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: var(--spacing-xl);
 }
 
 .btn-primary {
@@ -33,8 +47,12 @@
   color: white;
   padding: var(--spacing-md) var(--spacing-xl);
   border-radius: var(--radius-md);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   box-shadow: var(--shadow-md);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-primary:hover {
@@ -47,15 +65,20 @@
   color: var(--text-primary);
   padding: var(--spacing-md) var(--spacing-xl);
   border-radius: var(--radius-md);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   border: 2px solid var(--border-medium);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-secondary:hover {
   background: var(--hover-bg);
   border-color: var(--accent-blue);
+  transform: translateY(-2px);
 }
 
+/* Split layout */
 .hero-split {
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
@@ -75,6 +98,7 @@
   max-width: 650px;
 }
 
+/* Label */
 .hero-label {
   display: inline-block;
   background: var(--gradient-blue);
@@ -87,6 +111,7 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* Title animation container */
 .title-container {
   min-height: 4.5rem;
   width: 100%;
@@ -138,6 +163,7 @@
   font-size: clamp(2.5rem, 5vw, 4rem);
 }
 
+/* Description */
 .hero-description {
   font-size: 1.15rem;
   color: var(--text-secondary);
@@ -145,67 +171,7 @@
   margin-bottom: var(--spacing-xl);
 }
 
-
-.hero-buttons {
-  display: flex;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-xl);
-  flex-wrap: wrap;
-}
-
-.btn-primary {
-  background: var(--gradient-blue);
-  color: white;
-  padding: var(--spacing-md) var(--spacing-xl);
-  border-radius: var(--radius-md);
-  font-size: 1.05rem;
-  box-shadow: var(--shadow-md);
-  font-weight: 600;
-}
-
-.btn-primary:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-3px);
-}
-
-.btn-secondary {
-  background: var(--bg-card);
-  color: var(--text-primary);
-  padding: var(--spacing-md) var(--spacing-xl);
-  border-radius: var(--radius-md);
-  font-size: 1.05rem;
-  border: 2px solid var(--border-medium);
-  font-weight: 600;
-}
-
-.btn-secondary:hover {
-  background: var(--hover-bg);
-  border-color: var(--accent-blue);
-  transform: translateY(-2px);
-}
-
-.hero-tags {
-  display: flex;
-  gap: var(--spacing-md);
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.tech-logo {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  filter: grayscale(0);
-}
-
-.tech-logo:hover {
-  transform: translateY(-5px) scale(1.1);
-  filter: drop-shadow(0 5px 15px rgba(59, 130, 246, 0.4));
-}
-
-
-/* Photo Section */
+/* Photo / right column */
 .hero-right {
   display: flex;
   justify-content: flex-end;
@@ -294,12 +260,28 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(-50%) translateY(0);
   }
   50% {
     transform: translateX(-50%) translateY(-10px);
   }
+}
+
+/* Gallery section (kept but cleaned) */
+.gallery-section {
+  margin-top: var(--spacing-2xl);
+  padding: var(--spacing-xl) 0;
+}
+
+.gallery-container {
+  height: 600px;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Responsive */
@@ -385,18 +367,3 @@
     height: 150px;
   }
 }
-
-.gallery-section {
-  margin-top: var(--spacing-2xl);
-  padding: var(--spacing-xl) 0;
-}
-
-.gallery-container {
-  height: 600px;
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--bg-card);
-  box-shadow: var(--shadow-lg);
-}
-

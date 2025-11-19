@@ -1,0 +1,79 @@
+.tech-carousel-wrapper {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.tech-carousel {
+  width: 100%;
+  padding: var(--spacing-md) 0;
+}
+
+.tech-carousel .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+.tech-slide {
+  width: auto !important;
+  height: auto;
+}
+
+.tech-logo-card {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+.tech-logo-card:hover {
+  transform: translateY(-8px) scale(1.1);
+  box-shadow: var(--shadow-hover);
+  background: var(--hover-bg);
+  border-color: var(--accent-blue);
+}
+
+.tech-logo-card .tech-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: grayscale(0);
+}
+
+.tech-logo-card:hover .tech-logo {
+  filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.4));
+}
+
+.tech-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--gradient-blue);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 640px) {
+  .tech-logo-card {
+    width: 56px;
+    height: 56px;
+  }
+
+  .tech-logo-card .tech-logo {
+    width: 40px;
+    height: 40px;
+  }
+}
