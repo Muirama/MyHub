@@ -125,39 +125,28 @@ export default function AboutPage() {
         {/* anciens chiffres */}
         <div className="stat-card">
           <span className="stat-icon">⭐</span>
-          <h3 className="stat-number">15+</h3>
-          <p className="stat-label">Projets réalisés</p>
+          <h3 className="stat-number">+15</h3>
+          <p className="stat-label">
+            Projets réalisés ( personnel et académiques )
+          </p>
         </div>
         <div className="stat-card">
           <span className="stat-icon">💼</span>
           <h3 className="stat-number">Disponible</h3>
-          <p className="stat-label">Pour alternance</p>
+          <p className="stat-label">
+            Pour alternance ou autres types de collaborations
+          </p>
         </div>
         <div className="stat-card">
           <span className="stat-icon">📚</span>
           <h3 className="stat-number">3 ans</h3>
-          <p className="stat-label">D'apprentissage</p>
-        </div>
-        <div className="stat-card">
-          <span className="stat-icon">🧠</span>
-          <h3 className="stat-number">Passionné</h3>
-          <p className="stat-label">IA & UI/UX</p>
+          <p className="stat-label">D'apprentissage et encore plus à suivre</p>
         </div>
 
         <div className="stat-card">
           <span className="stat-icon">📅</span>
           <h3 className="stat-number">Depuis 2021</h3>
           <p className="stat-label">Développement actif</p>
-        </div>
-        <div className="stat-card">
-          <span className="stat-icon">🚀</span>
-          <h3 className="stat-number">+20</h3>
-          <p className="stat-label">Projets</p>
-        </div>
-        <div className="stat-card">
-          <span className="stat-icon">📱</span>
-          <h3 className="stat-number">3</h3>
-          <p className="stat-label">Apps publiées</p>
         </div>
       </section>
     </div>
