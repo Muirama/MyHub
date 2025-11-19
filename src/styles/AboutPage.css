@@ -106,9 +106,10 @@
 
 .bio-content-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: var(--spacing-2xl);
-  margin-bottom: var(--spacing-xl);
+  grid-template-columns: 320px 1fr; /* colonne fixe évite grands vides */
+  gap: var(--spacing-lg);
+  align-items: start; /* éviter que la colonne courte force hauteur */
+  margin-bottom: var(--spacing-lg);
 }
 
 .bio-text p {
@@ -141,11 +142,20 @@
   flex-direction: column;
   justify-content: center;
   gap: var(--spacing-md);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   border-radius: var(--radius-md);
-  /* pas de fond blanc : utiliser transparence pour rester cohérent */
-  background: transparent;
-  border: 1px dashed rgba(255, 255, 255, 0.06);
+  background: linear-gradient(
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.01)
+  );
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* petit effet sur hover */
+.bio-who:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
 }
 
 .bio-who h3 {
@@ -177,6 +187,10 @@
   font-size: 0.9rem;
 }
 
+.bio-extended {
+  padding: 0;
+}
+
 .bio-extended p {
   text-align: justify;
   color: var(--text-secondary);
@@ -189,8 +203,8 @@
 .stats-showcase {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-lg);
-  margin: var(--spacing-2xl) 0;
+  gap: var(--spacing-md);
+  align-items: stretch;
 }
 
 .stat-card {
@@ -273,82 +287,6 @@
   line-height: 1.6;
 }
 
-/* 6. Education Section */
-.education-section {
-  padding: var(--spacing-2xl);
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--glass-border);
-}
-
-.education-timeline {
-  max-width: 800px;
-  margin: var(--spacing-xl) auto;
-}
-
-.education-item {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-xl);
-  position: relative;
-}
-
-.education-item::after {
-  content: "";
-  position: absolute;
-  left: 50px;
-  top: 40px;
-  bottom: -30px;
-  width: 2px;
-  background: var(--border-light);
-}
-
-.education-item:last-child::after {
-  display: none;
-}
-
-.education-year {
-  background: var(--gradient-blue);
-  color: white;
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--radius-md);
-  font-weight: 700;
-  text-align: center;
-  height: fit-content;
-}
-
-.education-content {
-  background: var(--bg-card);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-light);
-  transition: all 0.3s ease;
-}
-
-.education-content:hover {
-  transform: translateX(10px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--accent-blue);
-}
-
-.education-content h3 {
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-xs);
-}
-
-.education-school {
-  color: var(--accent-blue);
-  font-weight: 600;
-  margin-bottom: var(--spacing-sm);
-}
-
-.education-description {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-}
-
 /* Common Section Styles */
 .about-section {
   background: var(--glass-bg);
@@ -364,6 +302,31 @@
   margin-bottom: var(--spacing-xl);
   font-size: 2rem;
   text-align: center;
+}
+
+/* ANIMATIONS REVEAL */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 520ms cubic-bezier(.2,.9,.2,1), transform 520ms cubic-bezier(.2,.9,.2,1);
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* animation subtile photo (floating) */
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.hero-image-container.in-view .hero-profile-image,
+.hero-image-container.in-view .hero-image-backdrop {
+  animation: floatY 6s ease-in-out infinite;
 }
 
 /* Responsive Design */
@@ -384,6 +347,7 @@
 
   .stats-showcase {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
   }
 
   .values-grid-new {
@@ -392,6 +356,11 @@
 
   .interests-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-image-container {
+    width: 200px;
+    height: 200px;
   }
 }
 
@@ -413,8 +382,7 @@
   }
 
   .bio-who {
-    border: none;
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-sm);
   }
 
   .bio-extended p {

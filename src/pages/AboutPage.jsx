@@ -1,14 +1,34 @@
 import "../styles/AboutPage.css";
-import TechCarousel from "../components/TechCarousel";
+import { useEffect } from "react";
 
 export default function AboutPage() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="site-container">
       {/* 1. Hero / Présentation */}
       <section className="about-hero-new">
         <div className="hero-content-grid">
           <div className="hero-image-wrapper">
-            <div className="hero-image-container">
+            <div className="hero-image-container animate-on-scroll">
               <img
                 src="/profile.jpg"
                 alt="Profile"
@@ -17,12 +37,12 @@ export default function AboutPage() {
               <div className="hero-image-backdrop"></div>
             </div>
           </div>
-          <div className="hero-text-content">
+          <div className="hero-text-content animate-on-scroll">
             <h1>RAMANDIMBINIRINA Mandresy Michel</h1>
-            <p className="hero-role">Développeur Full-Stack Junior</p>
+            <p className="hero-role">Développeur Junior</p>
             <p className="hero-pitch">
-              Développeur full-stack polyvalent, passionné par la création
-              d'expériences web modernes et intuitives.
+              Développeur polyvalent, passionné par la création d'expériences
+              web modernes et intuitives.
             </p>
             <div className="hero-social-links">
               <a
@@ -49,7 +69,7 @@ export default function AboutPage() {
       <section className="about-section bio-section">
         <h2>Mon Parcours</h2>
         <div className="bio-content-grid">
-          <div className="bio-who">
+          <div className="bio-who animate-on-scroll">
             <h3>Qui suis‑je ?</h3>
             <p>
               Étudiant en 3ème année en Intégration et Développement
@@ -58,13 +78,13 @@ export default function AboutPage() {
               explorer de nouvelles technologies.
             </p>
             <p className="bio-quick">
-              Flexible, curieux et orienté résultat — je cherche des
-              opportunités d'alternance ou de collaboration pour continuer à
-              monter en compétences.
+              Flexible, curieux, motivé et orienté résultat — je cherche des
+              opportunités de travail, d'alternance ou d'autres types de
+              collaboration pour continuer à monter en compétences.
             </p>
           </div>
 
-          <div className="bio-extended">
+          <div className="bio-extended animate-on-scroll">
             <p>
               <strong>Mon expérience en quelques mots</strong>
               <br />
@@ -93,15 +113,15 @@ export default function AboutPage() {
             <p>
               <strong>Objectif</strong>
               <br />À terme, je souhaite me spécialiser dans le développement de
-              jeux vidéo. En attendant, je continue à progresser sur le web et
-              le mobile.
+              jeux vidéo. En attendant, je continue à progresser sur le web, le
+              mobile et le desktop.
             </p>
           </div>
         </div>
       </section>
 
       {/* 4. Statistiques */}
-      <section className="stats-showcase">
+      <section className="stats-showcase animate-on-scroll">
         {/* anciens chiffres */}
         <div className="stat-card">
           <span className="stat-icon">⭐</span>
@@ -124,7 +144,6 @@ export default function AboutPage() {
           <p className="stat-label">IA & UI/UX</p>
         </div>
 
-        {/* cartes déplacées depuis la bio (intégrées ici) */}
         <div className="stat-card">
           <span className="stat-icon">📅</span>
           <h3 className="stat-number">Depuis 2021</h3>
@@ -139,43 +158,6 @@ export default function AboutPage() {
           <span className="stat-icon">📱</span>
           <h3 className="stat-number">3</h3>
           <p className="stat-label">Apps publiées</p>
-        </div>
-      </section>
-
-      {/* 6. Éducation & Certifications */}
-      <section className="about-section education-section">
-        <h2>Formation & Certifications</h2>
-        <div className="education-timeline">
-          <div className="education-item">
-            <div className="education-year">2024</div>
-            <div className="education-content">
-              <h3>Licence Informatique</h3>
-              <p className="education-school">Université / École</p>
-              <p className="education-description">
-                Spécialisation en développement web et mobile
-              </p>
-            </div>
-          </div>
-          <div className="education-item">
-            <div className="education-year">2023</div>
-            <div className="education-content">
-              <h3>Formation Full-Stack</h3>
-              <p className="education-school">OpenClassrooms</p>
-              <p className="education-description">
-                React, Node.js, MongoDB - Projet final avec mention
-              </p>
-            </div>
-          </div>
-          <div className="education-item">
-            <div className="education-year">2022</div>
-            <div className="education-content">
-              <h3>Certifications en ligne</h3>
-              <p className="education-school">Udemy, Coursera</p>
-              <p className="education-description">
-                JavaScript avancé, React, Flutter, UI/UX Design
-              </p>
-            </div>
-          </div>
         </div>
       </section>
     </div>
