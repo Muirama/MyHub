@@ -1,0 +1,11 @@
+[build]
+  # Vite outputs production builds to `dist` by default. Publish that folder so
+  # Netlify serves the built SPA (including files copied from `public/`).
+  publish = "dist"
+  command = "npm run build"
+
+[[redirects]]
+  # Redirect all routes to index.html (SPA handling)
+  from = "/*"
+  to = "/index.html"
+  status = 200
