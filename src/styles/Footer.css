@@ -120,3 +120,18 @@
     text-align: center;
   }
 }
+
+/* Icônes professionnelles Lucide */
+.footer-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--accent-blue);
+  margin-right: var(--spacing-sm);
+  stroke-width: 2;
+}
+
+/* Alignement propre pour la liste */
+.contact-icons li {
+  display: flex;
+  align-items: center;
+}

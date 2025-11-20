@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Mail, Phone, MapPin } from "lucide-react";
 import "../styles/Footer.css";
 
 export default function Footer() {
@@ -18,7 +19,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Section Liens */}
+          {/* Section Navigation */}
           <div className="footer-section">
             <h4 className="footer-title">Navigation</h4>
             <ul className="footer-links">
@@ -40,16 +41,29 @@ export default function Footer() {
           {/* Section Contact */}
           <div className="footer-section">
             <h4 className="footer-title">Contact</h4>
-            <ul className="footer-links">
-              <li>📧 mandresy.michel.ramandimbinirina@esti.mg</li>
-              <li>📱 +261 34 23 405 14</li>
-              <li>📍 Antananarivo, Madagascar</li>
+            <ul className="footer-links contact-icons">
+              <li>
+                <Mail className="footer-icon" />
+                mandresy.michel.ramandimbinirina@esti.mg
+              </li>
+
+              <li>
+                <Phone className="footer-icon" />
+                +261 34 23 405 14
+              </li>
+
+              <li>
+                <MapPin className="footer-icon" />
+                Antananarivo, Madagascar
+              </li>
             </ul>
           </div>
         </div>
 
+        {/* Bottom */}
         <div className="footer-bottom">
           <p>&copy; {currentYear} MyHub. Tous droits réservés.</p>
+
           <div className="footer-legal">
             <a href="#privacy">Confidentialité</a>
             <span>•</span>
