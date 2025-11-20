@@ -7,67 +7,21 @@ import "../styles/TechCarousel.css";
 
 export default function TechCarousel() {
   const techLogos = [
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      alt: "React",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      alt: "JavaScript",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-      alt: "TypeScript",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-      alt: "Node.js",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
-      alt: "Flutter",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      alt: "React Native",
-      badge: "RN",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-      alt: "PHP",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg",
-      alt: "Laravel",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-      alt: "MySQL",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-      alt: "Java",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
-      alt: "Spring Boot",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-      alt: "CSS3",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
-      alt: "Tailwind CSS",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-      alt: "Bootstrap",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
-      alt: "Figma",
-    },
+    { src: "/tech/react.png", alt: "React" },
+    { src: "/tech/JS.png", alt: "JavaScript" },
+    { src: "/tech/TS.png", alt: "TypeScript" },
+    { src: "/tech/node.png", alt: "Node.js" },
+    { src: "/tech/flutter.png", alt: "Flutter" },
+    { src: "/tech/php.png", alt: "PHP" },
+    { src: "/tech/laravel.png", alt: "Laravel" },
+    { src: "/tech/mysql.png", alt: "MySQL" },
+    { src: "/tech/java.png", alt: "Java" },
+    { src: "/tech/spring.png", alt: "Spring Boot" },
+    { src: "/tech/figma.png", alt: "Figma" },
+    { src: "/tech/git.png", alt: "Git"},
+    { src: "/tech/symfony.png", alt: "Symfony"},
+    { src: "/tech/firebase.png", alt: "Firebase"},
+    { src: "/tech/post.png", alt: "PostgreSQL"},
   ];
 
   const duplicatedLogos = [...techLogos, ...techLogos];
