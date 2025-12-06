@@ -15,7 +15,8 @@ export default function Footer() {
               <span className="brand-text">MyHub</span>
             </div>
             <p className="footer-description">
-              Votre plateforme moderne pour créer, collaborer et innover.
+              MyHub est une plateforme qui me sert à la fois de portfolio et de
+              réseau social.
             </p>
           </div>
 

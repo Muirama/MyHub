@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import TechCarousel from "../components/TechCarousel";
 import "../styles/HomePage.css";
 
 export default function HomePage() {
+  const navigate = useNavigate();
   const titles = [
     "Développeur Web",
     "Développeur Mobile",
@@ -78,6 +80,7 @@ export default function HomePage() {
                 className="btn-primary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
+                onClick={() => navigate("/projects")}
               >
                 Mes Projets
               </motion.button>
@@ -86,6 +89,7 @@ export default function HomePage() {
                 className="btn-secondary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
+                onClick={() => navigate("/contact")}
               >
                 Me Contacter
               </motion.button>
@@ -119,7 +123,7 @@ export default function HomePage() {
               transition={{ delay: 0.6, duration: 0.5 }}
             >
               <span className="badge-online-dot">
-                <img src="/icon/dispo.png" alt="Dispo"  />
+                <img src="/icon/dispo.png" alt="Dispo" />
               </span>
               <span className="badge-text">Disponible pour collaboration</span>
             </motion.div>

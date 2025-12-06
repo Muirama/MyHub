@@ -30,6 +30,14 @@ export default function NavBar() {
               À propos
             </Link>
           </li>
+          <li>
+            <Link
+              to="/projects"
+              className={`nav-link ${isActive("/projects") ? "active" : ""}`}
+            >
+              Projets
+            </Link>
+          </li>
         </ul>
 
       </div>
