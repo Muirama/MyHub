@@ -65,7 +65,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              Étudiant développeur polyvalent : web, mobile, desktop et design.
+              Développeur polyvalent : web, mobile, desktop et design.
               Enthousiaste à l'idée de collaborer sur de nouveaux projets.
             </motion.p>
 

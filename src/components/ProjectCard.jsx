@@ -2,12 +2,13 @@
 import { motion } from "framer-motion";
 import {
   ExternalLink,
-  Github,
   Calendar,
   Terminal,
   Gamepad,
   CloudRain,
   ListChecks,
+  AlarmClock,
+  Github,
 } from "lucide-react";
 
 const iconMap = {
@@ -15,6 +16,7 @@ const iconMap = {
   gamepad: Gamepad,
   "cloud-rain": CloudRain,
   "list-checks": ListChecks,
+  "alarm": AlarmClock,
 };
 
 export default function ProjectCard({ project, index }) {

@@ -184,7 +184,7 @@ export default function AboutPage() {
         >
           <Briefcase className="stat-icon-pro" />
           <h3 className="stat-number">Disponible</h3>
-          <p className="stat-label">Pour alternance ou collaboration</p>
+          <p className="stat-label">Pour collaboration</p>
         </motion.div>
 
         <motion.div
