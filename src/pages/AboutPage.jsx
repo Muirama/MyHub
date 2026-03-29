@@ -105,15 +105,16 @@ export default function AboutPage() {
           >
             <h3>Qui suis-je ?</h3>
             <p>
-              Étudiant en 3ème année en Intégration et Développement
-              Informatique, je construis des applications web, mobiles et
-              desktop. J’aime apprendre par la pratique, travailler en équipe et
-              explorer de nouvelles technologies.
+              Diplômé en cours de validation d’une Licence en Intégration et
+              Développement Informatique, je conçois et développe des
+              applications web, mobiles et desktop. Passionné par le
+              développement, j’aime apprendre par la pratique, travailler en
+              équipe et explorer de nouvelles technologies.
             </p>
             <p className="bio-quick">
-              Flexible, curieux, motivé et orienté résultat — je cherche des
-              opportunités de travail, d'alternance ou d'autres types de
-              collaboration pour continuer à monter en compétences.
+              Curieux, motivé et orienté résultat — je suis actuellement à la
+              recherche d’opportunités (emploi, freelance ou collaboration) afin
+              de mettre en pratique mes compétences et continuer à évoluer.
             </p>
           </motion.div>
 
@@ -152,8 +153,7 @@ export default function AboutPage() {
             </p>
             <p>
               <strong>Objectif</strong>
-              <br />
-              À terme, je souhaite me spécialiser dans le développement de
+              <br />À terme, je souhaite me spécialiser dans le développement de
               jeux vidéo. En attendant, je continue à progresser sur le web, le
               mobile et le desktop.
             </p>

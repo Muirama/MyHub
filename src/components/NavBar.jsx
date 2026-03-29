@@ -38,8 +38,15 @@ export default function NavBar() {
               Projets
             </Link>
           </li>
+          <li>
+            <Link
+              to="/contact"
+              className={`nav-link ${isActive("/contact") ? "active" : ""}`}
+            >
+              Contact
+            </Link>
+          </li>
         </ul>
-
       </div>
     </nav>
   );
