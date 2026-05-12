@@ -9,11 +9,13 @@ import {
   ListChecks,
   AlarmClock,
   Github,
+  Church
 } from "lucide-react";
 
 const iconMap = {
   terminal: Terminal,
   gamepad: Gamepad,
+  church : Church,
   "cloud-rain": CloudRain,
   "list-checks": ListChecks,
   "alarm": AlarmClock,

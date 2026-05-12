@@ -33,6 +33,26 @@ export const projects = [
     github: "https://github.com/Muirama/memoire",
     demo: "https://gascomesport.netlify.app/",
   },
+    {
+    title: "Ekar Soavy ",
+    description: "Une site pour faciliter la gestion de notre église",
+    image:
+      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=600&fit=crop", // Gaming
+    gradient: "linear-gradient(135deg, #c9a227 0%, #f8f8f8 100%)",
+    icon: "church",
+    status: "in-progress",
+    date: "2026",
+    tags: [
+      "React",
+      "Express",
+      "PostgreSQL",
+      "Framer Motion",
+      "Render",
+      "Neon"
+    ],
+    github: "https://github.com/Muirama/fiangonana",
+    demo: "https://ekarsoavy.netlify.app/",
+  },
   {
     title: "Mobile Weather App",
     description:
