@@ -71,20 +71,22 @@ export default function AboutPage() {
             viewport={{ once: true }}
           >
             <h1>RAMANDIMBINIRINA Mandresy Michel</h1>
-            <p className="hero-role">Développeur Junior</p>
+            <p className="hero-role">Software Developer</p>
             <p className="hero-pitch">
               Développeur polyvalent, passionné par la création d'expériences
               web modernes et intuitives.
             </p>
 
             <div className="hero-social-links">
-              <a href="https://github.com" target="_blank">
+              <a href="https://github.com/Muirama" target="_blank">
                 GitHub
               </a>
-              <a href="https://linkedin.com" target="_blank">
-                LinkedIn
+              <a
+                href="/CV.pdf"
+                download={"CV_RAMANDIMBINIRINA_Mandresy_Michel.pdf"}
+              >
+                CV
               </a>
-              <a href="mailto:contact@email.com">Email</a>
             </div>
           </motion.div>
         </div>
