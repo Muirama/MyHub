@@ -105,16 +105,17 @@ export default function AboutPage() {
           >
             <h3>Qui suis-je ?</h3>
             <p>
-              Diplômé en cours de validation d’une Licence en Intégration et
-              Développement Informatique, je conçois et développe des
-              applications web, mobiles et desktop. Passionné par le
-              développement, j’aime apprendre par la pratique, travailler en
-              équipe et explorer de nouvelles technologies.
+              Titulaire d’une Licence en Intégration et Développement
+              Informatique, je conçois et développe des applications web,
+              mobiles et desktop. Passionné par le développement, j’aime créer
+              des expériences numériques modernes, intuitives et performantes.
+              J’apprends principalement par la pratique, en travaillant sur des
+              projets concrets, en équipe comme en autonomie.
             </p>
             <p className="bio-quick">
-              Curieux, motivé et orienté résultat — je suis actuellement à la
+              Curieux, motivé et orienté résultats, je suis actuellement à la
               recherche d’opportunités (emploi, freelance ou collaboration) afin
-              de mettre en pratique mes compétences et continuer à évoluer.
+              de mettre en pratique mes compétences et continuer à progresser.
             </p>
           </motion.div>
 
@@ -129,7 +130,7 @@ export default function AboutPage() {
             <p>
               <strong>Mon expérience en quelques mots</strong>
               <br />
-              Au cours de mes trois premières années en intégration et
+              Au cours de mes trois années de formation en intégration et
               développement informatique, j’ai développé de solides compétences
               en développement web, mobile et desktop, aussi bien côté Front‑End
               que Back‑End. J’ai appris à concevoir toutes sortes d’applications
@@ -148,14 +149,15 @@ export default function AboutPage() {
             <p>
               <strong>Réflexion sur l'avenir et l'IA</strong>
               <br />
-              J’estime que l’IA sera un outil incontournable : ceux qui
-              l’utiliseront efficacement auront une longueur d’avance.
+              Je considère que l’intelligence artificielle est un outil
+              incontournable : ceux qui sauront l’exploiter efficacement auront
+              une réelle longueur d’avance.
             </p>
             <p>
               <strong>Objectif</strong>
-              <br />À terme, je souhaite me spécialiser dans le développement de
-              jeux vidéo. En attendant, je continue à progresser sur le web, le
-              mobile et le desktop.
+              <br />À long terme, je souhaite me spécialiser dans le
+              développement de jeux vidéo.. En attendant, je continue à
+              progresser sur le web, le mobile et le desktop.
             </p>
           </motion.div>
         </div>

@@ -7,7 +7,7 @@ export const projects = [
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
     icon: "terminal",
     status: "completed",
-    date: "2025",
+    date: "2024",
     tags: ["React", "CSS", "tailwindcss"],
     github: "https://github.com/Muirama/myTerminalPorto",
     demo: "https://muirama-terminal-porto.netlify.app",
@@ -30,8 +30,8 @@ export const projects = [
       "tailwindcss",
       "Swiper JS",
     ],
-    github: "https://github.com/Muirama/Gascom",
-    demo: "https://gascomtest.netlify.app/",
+    github: "https://github.com/Muirama/memoire",
+    demo: "https://gascomesport.netlify.app/",
   },
   {
     title: "Mobile Weather App",
@@ -64,7 +64,7 @@ export const projects = [
     gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
     icon: "list-checks",
     status: "upcoming",
-    date: "2025+",
+    date: "2026+",
     tags: ["Innovation", "À venir", "Créativité"],
   },
 ];
