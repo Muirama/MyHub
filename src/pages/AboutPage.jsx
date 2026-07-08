@@ -54,7 +54,7 @@ export default function AboutPage() {
           >
             <div className="hero-image-container">
               <img
-                src="/profile.jpg"
+                src="/profile.png"
                 alt="Profile"
                 className="hero-profile-image"
               />
