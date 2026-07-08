@@ -112,7 +112,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200 }}
             >
-              <img src="/profile.jpg" alt="Profile" className="profile-photo" />
+              <img src="/profile.png" alt="Profile" className="profile-photo" />
             </motion.div>
 
             {/* NEW BADGE */}
