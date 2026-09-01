@@ -19,7 +19,7 @@ export const projects = [
       "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=600&fit=crop", // Gaming
     gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
     icon: "gamepad",
-    status: "in-progress",
+    status: "completed",
     date: "2025",
     tags: [
       "React",
@@ -31,7 +31,7 @@ export const projects = [
       "Swiper JS",
     ],
     github: "https://github.com/Muirama/memoire",
-    demo: "https://gascomesport.netlify.app/",
+    demo: "https://www.gascomesports.com/",
   },
     {
     title: "Ekar Soavy ",

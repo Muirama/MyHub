@@ -9,9 +9,10 @@ export default function HomePage() {
   const navigate = useNavigate();
   const titles = [
     "Développeur Web",
+    "Etudiant en Infrastructure et Cybersécurité",
     "Développeur Mobile",
+    "IA & Machine Learning",
     "Développeur Desktop",
-    "Designer",
   ];
 
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);

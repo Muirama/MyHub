@@ -78,10 +78,60 @@ html, body {
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
+
+  /* Alias d'accent utilisés par les liens/focus (corrige une variable manquante) */
+  --accent-primary: var(--accent-blue);
+  --accent-secondary: var(--accent-purple);
+
+  /* Fond global de page */
+  --body-gradient: linear-gradient(180deg, #7dd3fc 0%, #bae6fd 30%, #e0f2fe 100%);
+}
+
+/* ─────────────── DARK MODE ─────────────── */
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-card: #1e293b;
+  --bg-accent: #312e81;
+  --bg-purple: #2e1065;
+  --bg-green: #064e3b;
+
+  --accent-blue: #38bdf8;
+  --accent-purple: #a78bfa;
+  --accent-pink: #f472b6;
+  --accent-green: #34d399;
+  --accent-orange: #fb923c;
+  --accent-cyan: #22d3ee;
+
+  --gradient-blue: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  --gradient-purple: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+  --gradient-sunset: linear-gradient(135deg, #fb923c 0%, #db2777 100%);
+  --gradient-ocean: linear-gradient(135deg, #22d3ee 0%, #0284c7 100%);
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --border-light: #334155;
+  --border-medium: #475569;
+
+  --glass-bg: rgba(15, 23, 42, 0.75);
+  --glass-border: rgba(51, 65, 85, 0.6);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.55);
+
+  --hover-bg: #1e293b;
+  --active-bg: #334155;
+  --focus-ring: 0 0 0 3px rgba(56, 189, 248, 0.4);
+
+  --body-gradient: linear-gradient(180deg, #020617 0%, #0f172a 40%, #1e293b 100%);
 }
 
 body {
-  background: linear-gradient(180deg, #7dd3fc 0%, #bae6fd 30%, #e0f2fe 100%);
+  background: var(--body-gradient);
   color: var(--text-primary);
   min-height: 100vh;
 }
@@ -164,5 +214,26 @@ a:hover {
   
   h2 {
     font-size: 1.5rem;
+  }
+}
+
+/* Petits écrans (iPhone SE et équivalents ≤ 480px) */
+@media (max-width: 480px) {
+  .site-container {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-submit {
+    font-size: 0.95rem;
   }
 }

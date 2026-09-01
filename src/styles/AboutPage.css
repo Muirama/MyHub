@@ -427,6 +427,27 @@
   }
 }
 
+@media (max-width: 480px) {
+  .hero-image-container {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero-text-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .about-section,
+  .bio-section,
+  .values-section {
+    padding: var(--spacing-md);
+  }
+
+  .stat-card {
+    padding: var(--spacing-sm);
+  }
+}
+
 /* Icônes professionnelles Lucide */
 .stat-icon-pro {
   width: 42px;

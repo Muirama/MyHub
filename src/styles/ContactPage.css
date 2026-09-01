@@ -345,3 +345,21 @@
     height: 180px;
   }
 }
+
+@media (max-width: 480px) {
+  .contact-hero {
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+  }
+
+  .contact-card {
+    padding: var(--spacing-md);
+  }
+
+  .social-link {
+    padding: var(--spacing-sm);
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+}

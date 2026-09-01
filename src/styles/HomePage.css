@@ -4,6 +4,20 @@
   box-sizing: border-box;
 }
 
+/* Sans ce bloc, la règle mobile de index.css est écrasée par la règle
+   ci-dessus (même spécificité, chargée avant dans le bundle final). */
+@media (max-width: 768px) {
+  .site-container {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .site-container {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+}
+
 /* ========== GRID SPLIT ========== */
 .hero-split {
   display: grid;
@@ -203,6 +217,8 @@
 @media (max-width: 968px) {
   .hero-split {
     grid-template-columns: 1fr;
+    min-height: auto;
+    padding: var(--spacing-xl) 0;
   }
 
   .hero-left {
@@ -211,9 +227,43 @@
 
   .hero-right {
     order: 1;
+    padding-bottom: var(--spacing-xl);
   }
 
   .photo-container {
     max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  .photo-container {
+    max-width: 220px;
+  }
+
+  .hero-right {
+    padding-bottom: var(--spacing-2xl);
+  }
+
+  .enhanced-badge {
+    max-width: calc(100% - var(--spacing-md));
+    padding: var(--spacing-xs) var(--spacing-md);
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .badge-text {
+    font-size: 0.8rem;
   }
 }

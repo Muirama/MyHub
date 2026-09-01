@@ -4,9 +4,26 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/jpg" href="/icon/myhub.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/index.css">
-    <title> Muirama Hub </title>
-    <meta name="description" content="Portfolio créatif et moderne - Découvrez mes projets web interactifs et animations">
+    <link rel="stylesheet" href="/src/index.css" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("myhub-theme");
+          var theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+      })();
+    </script>
+    <title>Muirama Hub</title>
+    <meta
+      name="description"
+      content="Portfolio créatif et moderne - Découvrez mes projets web interactifs et animations"
+    />
   </head>
   <body>
     <div id="root"></div>
