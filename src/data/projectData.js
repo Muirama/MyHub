@@ -3,7 +3,7 @@ export const projects = [
     title: "MyTerminal Portfolio",
     description: "Portfolio personnel comme un terminal.",
     image:
-      "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&h=600&fit=crop", // Terminal/Code
+      "/projects/terminal.png", 
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
     icon: "terminal",
     status: "completed",
@@ -16,7 +16,7 @@ export const projects = [
     title: "Gascom ",
     description: "Une site pour une entreprise de gaming",
     image:
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=600&fit=crop", // Gaming
+      "/projects/gascom.png",
     gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
     icon: "gamepad",
     status: "completed",
@@ -37,7 +37,7 @@ export const projects = [
     title: "Ekar Soavy ",
     description: "Une site pour faciliter la gestion de notre église",
     image:
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=600&fit=crop", // Gaming
+      "/projects/soavy.png",
     gradient: "linear-gradient(135deg, #c9a227 0%, #f8f8f8 100%)",
     icon: "church",
     status: "in-progress",
@@ -57,8 +57,8 @@ export const projects = [
     title: "Mobile Weather App",
     description:
       "Application météo mobile avec géolocalisation et prévisions sur 7 jours qui donnent des conseils en agricoles en fonctions de la prévision météorologique.",
-    image:
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=600&fit=crop", // Weather
+    // image:
+    //   "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=600&fit=crop", // Weather
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
     icon: "cloud-rain",
     status: "completed",
@@ -79,8 +79,8 @@ export const projects = [
   {
     title: "Upcoming Project",
     description: "De nouvelles idées en préparation et de nouvelles aventures.",
-    image:
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=600&fit=crop", // Task
+    // image:
+    //   "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=600&fit=crop", // Task
     gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
     icon: "list-checks",
     status: "upcoming",

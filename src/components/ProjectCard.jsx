@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   ExternalLink,
@@ -9,20 +10,22 @@ import {
   ListChecks,
   AlarmClock,
   Github,
-  Church
+  Church,
 } from "lucide-react";
 
 const iconMap = {
   terminal: Terminal,
   gamepad: Gamepad,
-  church : Church,
+  church: Church,
   "cloud-rain": CloudRain,
   "list-checks": ListChecks,
-  "alarm": AlarmClock,
+  alarm: AlarmClock,
 };
 
 export default function ProjectCard({ project, index }) {
   const IconComponent = iconMap[project.icon] || Terminal;
+  const [imageFailed, setImageFailed] = useState(false);
+  const hasRealImage = Boolean(project.image) && !imageFailed;
 
   return (
     <motion.div
@@ -32,12 +35,26 @@ export default function ProjectCard({ project, index }) {
       transition={{ delay: index * 0.1 }}
     >
       <div
-        className="project-image project-gradient"
-        style={{ background: project.gradient }}
+        className="project-image"
+        style={!hasRealImage ? { background: project.gradient } : undefined}
       >
-        <div className="project-icon-wrapper">
-          <IconComponent size={64} strokeWidth={1.5} />
-        </div>
+        {hasRealImage ? (
+          <img
+            src={project.image}
+            alt={`Aperçu du projet ${project.title}`}
+            loading="lazy"
+            onError={() => setImageFailed(true)}
+          />
+        ) : (
+          <div
+            className="project-gradient"
+            style={{ background: project.gradient }}
+          >
+            <div className="project-icon-wrapper">
+              <IconComponent size={64} strokeWidth={1.5} />
+            </div>
+          </div>
+        )}
 
         <div className="project-overlay">
           <div className="project-links">
@@ -66,8 +83,8 @@ export default function ProjectCard({ project, index }) {
             {project.status === "completed"
               ? "Terminé"
               : project.status === "in-progress"
-              ? "En cours"
-              : "À venir"}
+                ? "En cours"
+                : "À venir"}
           </span>
         </div>
 
